@@ -3,13 +3,30 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Timer</title>
+    <title>TIMER</title>
     <link rel="stylesheet" href="./style/style.css" />
   </head>
   <body>
-    <div id="root">
-      <p>00:00</p>
+    <h1 id="timer">TIMER</h1>
+    <div class="controls">
+      <button id="reset">Reset</button>
+      <button id="start">Start</button>
+      <button id="pause">Pause</button>
     </div>
-    <script src="src/timer.js"></script>
+    <div class="timers">
+      <div class="time">
+        Hour:
+        <span id="hour"></span>
+      </div>
+      <div class="time">
+        Minute:
+        <span id="minute"></span>
+      </div>
+      <div class="time">
+        Second:
+        <span id="seconds"></span>
+      </div>
+    </div>
+    <script src="./src/timer.js"></script>
   </body>
 </html>

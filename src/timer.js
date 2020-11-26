@@ -1,18 +1,34 @@
-const startMin = 1;
-let time = startMin * 60;
-const countdown = document.querySelector("p");
-function updateCountdown() {
-  if (time <= 0) {
-    clearInterval(setCountdown);
+window.onload = () => {
+  let hour = 0;
+  let minute = 0;
+  let seconds = 0;
+  let totalSeconds = 0;
+
+  let intervalId = null;
+
+  function startTimer() {
+    ++totalSeconds;
+    hour = Math.floor(totalSeconds / 3600);
+    minute = Math.floor((totalSeconds - hour * 3600) / 60);
+    seconds = totalSeconds - (hour * 3600 + minute * 60);
+
+    document.getElementById("hour").innerHTML = hour;
+    document.getElementById("minute").innerHTML = minute;
+    document.getElementById("seconds").innerHTML = seconds;
   }
-  let minutes = Math.floor(time / 60);
-  let seconds = time % 60;
-  minutes = minutes < 10 ? "0".minutes : minutes;
-  seconds = minutes < 10 ? "0".seconds : seconds;
-  countdown.innerText = minutes + ":" + seconds;
-  time--;
-}
-updateCountdown();
-{
-  const setCountdown = setInterval(updateCountdown, 1000);
-}
+
+  document.getElementById("start").addEventListener("click", () => {
+    intervalId = setInterval(startTimer, 1000);
+  });
+
+  document.getElementById("pause").addEventListener("click", () => {
+    if (intervalId) clearInterval(intervalId);
+  });
+
+  document.getElementById("reset").addEventListener("click", () => {
+    totalSeconds = 0;
+    document.getElementById("hour").innerHTML = "0 ";
+    document.getElementById("minute").innerHTML = "0 ";
+    document.getElementById("seconds").innerHTML = "0 ";
+  });
+};
