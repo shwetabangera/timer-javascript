@@ -18,6 +18,7 @@ h1 {
   font-family: Josefin Slab;
   font-size: 72px;
   text-align: center;
+  text-shadow: rgb(125, 125, 219);
 }
 
 button {
@@ -26,7 +27,7 @@ button {
   font-family: Josefin Slab;
   font-size: 50px;
   text-align: center;
-  border: 1px solid black;
+  border: 1px solid rgba(31, 29, 29, 0.705);
   margin: 20px;
   padding: 15px 25px;
   border-radius: 10px;
@@ -38,8 +39,7 @@ button:hover {
 .timers {
   display: flex;
   justify-content: center;
-  /* margin: 50px; */
   text-align: center;
-  font-size: 50px;
+  font-size: 30px;
   flex-wrap: wrap;
 }
